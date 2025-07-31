@@ -3,12 +3,12 @@
 # Exit immediately if a command exits with a non-zero status
 set -e
 
-OMARCHY_INSTALL=~/.local/share/omarchy/install
+PROJTC_INSTALL=~/.local/share/projtc/install
 
 # Give people a chance to retry running the installation
 catch_errors() {
-  echo -e "\n\e[31mOmarchy installation failed!\e[0m"
-  echo "You can retry by running: bash ~/.local/share/omarchy/install.sh"
+  echo -e "\n\e[31mProjTC installation failed!\e[0m"
+  echo "You can retry by running: bash ~/.local/share/projtc/install.sh"
   echo "Get help from the community: https://discord.gg/tXFUdasqhY"
 }
 
@@ -16,7 +16,7 @@ trap catch_errors ERR
 
 show_logo() {
   clear
-  tte -i ~/.local/share/omarchy/logo.txt --frame-rate ${2:-120} ${1:-expand}
+  tte -i ~/.local/share/projtc/logo.txt --frame-rate ${2:-120} ${1:-expand}
   echo
 }
 
@@ -26,49 +26,49 @@ show_subtext() {
 }
 
 # Install prerequisites
-source $OMARCHY_INSTALL/preflight/aur.sh
-source $OMARCHY_INSTALL/preflight/presentation.sh
+source $PROJTC_INSTALL/preflight/aur.sh
+source $PROJTC_INSTALL/preflight/presentation.sh
 
 # Configuration
 show_logo beams 240
-show_subtext "Let's install Omarchy! [1/5]"
-source $OMARCHY_INSTALL/config/identification.sh
-source $OMARCHY_INSTALL/config/config.sh
-source $OMARCHY_INSTALL/config/detect-keyboard-layout.sh
-source $OMARCHY_INSTALL/config/fix-fkeys.sh
-source $OMARCHY_INSTALL/config/network.sh
-source $OMARCHY_INSTALL/config/power.sh
-source $OMARCHY_INSTALL/config/timezones.sh
-source $OMARCHY_INSTALL/config/login.sh
-source $OMARCHY_INSTALL/config/nvidia.sh
+show_subtext "Let's install ProjTC! [1/5]"
+source $PROJTC_INSTALL/config/identification.sh
+source $PROJTC_INSTALL/config/config.sh
+source $PROJTC_INSTALL/config/detect-keyboard-layout.sh
+source $PROJTC_INSTALL/config/fix-fkeys.sh
+source $PROJTC_INSTALL/config/network.sh
+source $PROJTC_INSTALL/config/power.sh
+source $PROJTC_INSTALL/config/timezones.sh
+source $PROJTC_INSTALL/config/login.sh
+source $PROJTC_INSTALL/config/nvidia.sh
 
 # Development
 show_logo decrypt 920
 show_subtext "Installing terminal tools [2/5]"
-source $OMARCHY_INSTALL/development/terminal.sh
-source $OMARCHY_INSTALL/development/development.sh
-source $OMARCHY_INSTALL/development/nvim.sh
-source $OMARCHY_INSTALL/development/ruby.sh
-source $OMARCHY_INSTALL/development/docker.sh
-source $OMARCHY_INSTALL/development/firewall.sh
+source $PROJTC_INSTALL/development/terminal.sh
+source $PROJTC_INSTALL/development/development.sh
+source $PROJTC_INSTALL/development/nvim.sh
+source $PROJTC_INSTALL/development/ruby.sh
+source $PROJTC_INSTALL/development/docker.sh
+source $PROJTC_INSTALL/development/firewall.sh
 
 # Desktop
 show_logo slice 60
 show_subtext "Installing desktop tools [3/5]"
-source $OMARCHY_INSTALL/desktop/desktop.sh
-source $OMARCHY_INSTALL/desktop/hyprlandia.sh
-source $OMARCHY_INSTALL/desktop/theme.sh
-source $OMARCHY_INSTALL/desktop/bluetooth.sh
-source $OMARCHY_INSTALL/desktop/asdcontrol.sh
-source $OMARCHY_INSTALL/desktop/fonts.sh
-source $OMARCHY_INSTALL/desktop/printer.sh
+source $PROJTC_INSTALL/desktop/desktop.sh
+source $PROJTC_INSTALL/desktop/hyprlandia.sh
+source $PROJTC_INSTALL/desktop/theme.sh
+source $PROJTC_INSTALL/desktop/bluetooth.sh
+source $PROJTC_INSTALL/desktop/asdcontrol.sh
+source $PROJTC_INSTALL/desktop/fonts.sh
+source $PROJTC_INSTALL/desktop/printer.sh
 
 # Apps
 show_logo expand
 show_subtext "Installing default applications [4/5]"
-source $OMARCHY_INSTALL/apps/webapps.sh
-source $OMARCHY_INSTALL/apps/xtras.sh
-source $OMARCHY_INSTALL/apps/mimetypes.sh
+source $PROJTC_INSTALL/apps/webapps.sh
+source $PROJTC_INSTALL/apps/xtras.sh
+source $PROJTC_INSTALL/apps/mimetypes.sh
 
 # Updates
 show_logo highlight
