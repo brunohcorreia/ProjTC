@@ -1,5 +1,5 @@
-echo "Add LocalSend as new default application"
+echo "Add Croc as new default application"
 
-if ! command -v localsend &>/dev/null; then
-  yay -S --noconfirm --needed localsend-bin
+if ! command -v croc &>/dev/null; then
+  yay -S --noconfirm --needed croc
 fi

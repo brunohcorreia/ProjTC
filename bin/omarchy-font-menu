@@ -8,5 +8,5 @@ font=$(
 )
 
 if [[ -n "$font" ]]; then
-  sed -i "s/family = \".*\"/family = \"$font\"/g" ~/.config/alacritty/alacritty.toml
+  sed -i "s/family = \".*\"/family = \"$font\"/g" ~/.config/kitty/kitty.toml
 fi

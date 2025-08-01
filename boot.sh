@@ -18,7 +18,7 @@ sudo pacman -Sy --noconfirm --needed git
 
 echo -e "\nCloning ProjTC..."
 rm -rf ~/.local/share/projtc/
-git clone https://github.com/basecamp/projtc.git ~/.local/share/projtc >/dev/null
+git clone https://github.com/brunohcorreia/projtc.git ~/.local/share/projtc >/dev/null
 
 # Use custom branch if instructed
 if [[ -n "$PROJTC_REF" ]]; then

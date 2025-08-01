@@ -34,7 +34,7 @@ show_logo beams 240
 show_subtext "Let's install ProjTC! [1/5]"
 source $PROJTC_INSTALL/config/identification.sh
 source $PROJTC_INSTALL/config/config.sh
-source $PROJTC_INSTALL/config/detect-keyboard-layout.sh
+source $PROJTC_INSTALL/config/detect-keyboard-layout.sh #
 source $PROJTC_INSTALL/config/fix-fkeys.sh
 source $PROJTC_INSTALL/config/network.sh
 source $PROJTC_INSTALL/config/power.sh
@@ -56,7 +56,14 @@ source $PROJTC_INSTALL/development/firewall.sh
 show_logo slice 60
 show_subtext "Installing desktop tools [3/5]"
 source $PROJTC_INSTALL/desktop/desktop.sh
+
+# Decidir depois Window Manager
 source $PROJTC_INSTALL/desktop/hyprlandia.sh
+source $PROJTC_INSTALL/desktop/i3landia.sh
+source $PROJTC_INSTALL/desktop/awesomelandia.sh
+source $PROJTC_INSTALL/desktop/bsplandia.sh
+source $PROJTC_INSTALL/desktop/openlandia.sh
+
 source $PROJTC_INSTALL/desktop/theme.sh
 source $PROJTC_INSTALL/desktop/bluetooth.sh
 source $PROJTC_INSTALL/desktop/asdcontrol.sh

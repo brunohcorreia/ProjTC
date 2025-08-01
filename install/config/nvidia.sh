@@ -47,10 +47,10 @@ if [ -n "$(lspci | grep -i 'nvidia')" ]; then
     "${NVIDIA_DRIVER_PACKAGE}"
     "nvidia-utils"
     "lib32-nvidia-utils"
-    "egl-wayland"
+    "egl-wayland" #tirar
     "libva-nvidia-driver" # For VA-API hardware acceleration
-    "qt5-wayland"
-    "qt6-wayland"
+    "qt5-wayland" #tirar
+    "qt6-wayland" #tirar
   )
 
   yay -S --needed --noconfirm "${PACKAGES_TO_INSTALL[@]}"
@@ -77,7 +77,7 @@ if [ -n "$(lspci | grep -i 'nvidia')" ]; then
   sudo mkinitcpio -P
 
   # Add NVIDIA environment variables to hyprland.conf
-  HYPRLAND_CONF="$HOME/.config/hypr/hyprland.conf"
+  HYPRLAND_CONF="$HOME/.config/hypr/hyprland.conf" #tirar
   if [ -f "$HYPRLAND_CONF" ]; then
     cat >>"$HYPRLAND_CONF" <<'EOF'
 

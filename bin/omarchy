@@ -1,12 +1,12 @@
 #!/bin/bash
 
-OMARCHY_VERSION=$(git -C ~/.local/share/omarchy describe --tags --abbrev=0 2>/dev/null)
-PATH="$PATH:$HOME/.local/share/omarchy/bin"
+PROJTC_VERSION=$(git -C ~/.local/share/projtc describe --tags --abbrev=0 2>/dev/null)
+PATH="$PATH:$HOME/.local/share/projtc/bin"
 
 show_ascii_art() {
   clear
-  tte -i ~/.local/share/omarchy/logo.txt --frame-rate 640 --no-color expand
-  echo "                                                                          $OMARCHY_VERSION"
+  tte -i ~/.local/share/projtc/logo.txt --frame-rate 640 --no-color expand
+  echo "                                                                          $PROJTC_VERSION"
 }
 
 main_menu() {
@@ -17,7 +17,7 @@ main_menu() {
   case "$choice" in
   Theme) theme_menu ;;
   Font)
-    omarchy-font-menu
+    projtc-font-menu
     ack_command
     main_menu
     ;;
@@ -30,14 +30,14 @@ main_menu() {
 
 update_menu() {
   show_ascii_art
-  local menu=("Omarchy" "Waybar" "Walker" "Plymouth" "SwayOSD" "Desktop apps" "Back")
+  local menu=("ProjTC" "Waybar" "Walker" "Plymouth" "SwayOSD" "Desktop apps" "Back")
   local commands=(
-    "omarchy-update"
-    "omarchy-refresh-waybar"
-    "omarchy-refresh-walker"
-    "omarchy-refresh-plymouth"
-    "omarchy-refresh-swayosd"
-    "omarchy-refresh-applications"
+    "projtc-update"
+    "projtc-refresh-waybar"
+    "projtc-refresh-walker"
+    "projtc-refresh-plymouth"
+    "projtc-refresh-swayosd"
+    "projtc-refresh-applications"
     "main_menu"
   )
   local choice
@@ -60,9 +60,9 @@ theme_menu() {
   show_ascii_art
   local menu=("Pick" "Install" "Update" "Remove" "Back")
   local commands=(
-    "omarchy-theme-menu"
+    "projtc-theme-menu"
     "install_theme_prompt"
-    "omarchy-theme-update"
+    "projtc-theme-update"
     "remove_theme_prompt"
     "main_menu"
   )
@@ -86,7 +86,7 @@ install_theme_prompt() {
   local url
   url=$(gum input --placeholder="Git repo URL for theme" --header="")
   if [[ -n "$url" ]]; then
-    omarchy-theme-install "$url"
+    projtc-theme-install "$url"
   fi
   theme_menu
 }
@@ -95,7 +95,7 @@ remove_theme_prompt() {
   local theme
   theme=$(gum input --placeholder="Theme name" --header="")
   if [[ -n "$theme" ]]; then
-    omarchy-theme-remove "$theme"
+    projtc-theme-remove "$theme"
   fi
   theme_menu
 }
@@ -104,11 +104,11 @@ setup_menu() {
   show_ascii_art
   local menu=("Dropbox" "Steam" "Docker DBs" "Fingerprint sensor" "Fido2 device" "Back")
   local commands=(
-    "omarchy-setup-dropbox"
-    "omarchy-setup-steam"
+    "projtc-setup-dropbox"
+    "projtc-setup-steam"
     "setup_docker_dbs"
-    "omarchy-setup-fingerprint"
-    "omarchy-setup-fido2"
+    "projtc-setup-fingerprint"
+    "projtc-setup-fido2"
     "main_menu"
   )
   local choice
@@ -146,7 +146,7 @@ setup_docker_dbs() {
 }
 
 open_manual() {
-  setsid chromium --new-window --ozone-platform=wayland --app="https://manuals.omamix.org/2/the-omarchy-manual" >/dev/null 2>&1 &
+  setsid chromium --new-window --ozone-platform=wayland --app="https://manuals.omamix.org/2/the-projtc-manual" >/dev/null 2>&1 &
   clear
 }
 
