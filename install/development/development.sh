@@ -6,4 +6,6 @@ yay -S --noconfirm --needed \
   mariadb-libs postgresql-libs \
   github-cli \
   lazygit lazydocker-bin \
-  tmux zsh
+  tmux 
+
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
