@@ -1,9 +1,0 @@
-[Plymouth Theme]
-Name=ProjTC
-Description=ProjTC splash screen.
-ModuleName=script
-
-[script]
-ImageDir=/usr/share/plymouth/themes/projtc
-ScriptFile=/usr/share/plymouth/themes/projtc/projtc.script
-ConsoleLogBackgroundColor=0x1a1b26
